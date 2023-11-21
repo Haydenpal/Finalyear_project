@@ -1,4 +1,11 @@
 # main.tf
+variable "AWS_ACCOUNT_ID" {
+  description = "Your AWS account ID"
+}
+
+variable "ECR_REPO_NAME" {
+  description = "Your ECR repository name"
+}
 
 provider "aws" {
   region = "ap-northeast-1"  # Use Terraform variables for flexibility
@@ -129,7 +136,7 @@ resource "aws_instance" "my_instance" {
       "sudo aws configure set region 'ap-south-1'",
       "sudo chmod +x deploy.sh",  # Set execute permissions for deploy.sh
       "sudo ./deploy.sh",  # Execute your deploy.sh script
-      "sudo docker run -d -p 80:80 $AWS_ACCOUNT_ID.dkr.ecr.ap-south-1.amazonaws.com/$ECR_REPO_NAME:latest",
+      "sudo docker run -d -p 80:80 ${var.AWS_ACCOUNT_ID}.dkr.ecr.ap-northeast-1.amazonaws.com/${var.ECR_REPO_NAME}:latest",
       # Add any additional setup or script execution commands here
     ]
 
@@ -145,3 +152,6 @@ resource "aws_instance" "my_instance" {
 output "ec2_instance_public_ip" {
   value = aws_instance.my_instance.public_ip
 }
+# Set variable values
+AWS_ACCOUNT_ID = "720272007085"
+ECR_REPO_NAME = "my-ecr-repo"
