@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set your AWS region and account ID
-AWS_REGION="us-east-1"  # Change this to your preferred AWS region
+AWS_REGION="ap-south-1"  # Change this to your preferred AWS region
 AWS_ACCOUNT_ID="805170468433"
 ECR_REPO_NAME="my-ecr-repo"  # Change this to your desired repository name
 
