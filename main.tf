@@ -1,7 +1,10 @@
 # main.tf
 
 provider "aws" {
-  region = "ap-south-1"  # Change this to the desired AWS region
+  region = "ap-south-1"
+  access_key ="AKIASABRXIT6ND2F6QW5"  # Use Terraform variables for flexibility
+  secret_key ="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"  # Use Terraform variables for flexibility
+# Change this to the desired AWS region
 }
 
 resource "aws_ecr_repository" "my_ecr_repo" {
