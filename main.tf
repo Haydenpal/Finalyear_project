@@ -1,7 +1,7 @@
 # main.tf
 
 provider "aws" {
-  region = "ap-south-1"  # Use Terraform variables for flexibility
+  region = "ap-northeast-1"  # Use Terraform variables for flexibility
 # Change this to the desired AWS region
 }
 
@@ -47,7 +47,7 @@ resource "aws_vpc" "myvpc1" {
 resource "aws_subnet" "sub1" {
   vpc_id                  = aws_vpc.myvpc1.id
   cidr_block              = "10.0.1.0/24"
-  availability_zone       = "ap-south-1a"
+  availability_zone       = "ap-northeast-1a"
   map_public_ip_on_launch = true
 }
 
