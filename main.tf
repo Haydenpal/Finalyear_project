@@ -8,7 +8,7 @@ provider "aws" {
 }
 
 resource "aws_ecr_repository" "my_ecr_repo" {
-  name = "my-ecr-repo"  # Change this to your desired repository name
+  name = "my-ecr"  # Change this to your desired repository name
 }
 
 resource "aws_security_group" "allow_all" {
@@ -38,7 +38,7 @@ resource "aws_security_group" "allow_all" {
 }
 
 resource "aws_key_pair" "example" {
-  key_name   = "hayden-terraform"  # Replace with your desired key name
+  key_name   = "hayden-te"  # Replace with your desired key name
   public_key = file("~/.ssh/id_rsa.pub")  # Replace with the path to your public key file
 }
 
