@@ -124,8 +124,8 @@ resource "aws_instance" "my_instance" {
       "sudo unzip terraform_0.15.5_linux_amd64.zip",
       "sudo mv terraform /usr/local/bin/",
       "sudo rm terraform_0.15.5_linux_amd64.zip",
-      "sudo aws configure set aws_access_key_id 'AKIA5MAGU6INJRC3NYH4'",
-      "sudo aws configure set aws_secret_access_key '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'",
+      "sudo aws configure set aws_access_key_id 'AKIA2PM4OT6WSKNADFKJ'",
+      "sudo aws configure set aws_secret_access_key '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'",
       "sudo aws configure set region 'ap-south-1'",
       "sudo chmod +x deploy.sh",  # Set execute permissions for deploy.sh
       "sudo ./deploy.sh",  # Execute your deploy.sh script
