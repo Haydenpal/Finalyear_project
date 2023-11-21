@@ -49,7 +49,7 @@ resource "aws_vpc" "myvpc1" {
 resource "aws_subnet" "sub1" {
   vpc_id                  = aws_vpc.myvpc1.id
   cidr_block              = "10.0.1.0/24"
-  availability_zone       = "ap-south-1a"
+  availability_zone       = "us-east-1a"
   map_public_ip_on_launch = true
 }
 
@@ -98,8 +98,8 @@ resource "aws_security_group" "sg" {
 }
 
 resource "aws_instance" "my_instance" {
-  ami           = "ami-0b2ec65899cc867ef"  # Use the desired AMI ID
-  instance_type = "m5.large"  # Change to a supported instance type for Microsoft SQL Server
+  ami           = "ami-0fc5d935ebf8bc3bc"  # Use the desired AMI ID
+  instance_type = "t2.small"  # Change to a supported instance type for Microsoft SQL Server
   key_name      = aws_key_pair.example.key_name
   vpc_security_group_ids = [aws_security_group.sg.id]
   subnet_id              = aws_subnet.sub1.id
@@ -112,7 +112,7 @@ resource "aws_instance" "my_instance" {
   provisioner "remote-exec" {
     inline = [
       # Check connectivity before proceeding
-      "ping -c 3 ap-south-1.ec2.archive.ubuntu.com",
+      "ping -c 3 us-east-1.ec2.archive.ubuntu.com",
       "ping -c 3 security.ubuntu.com",
       "curl -I https://packages.microsoft.com/ubuntu/20.04/prod/dists/focal/InRelease",
       "curl -I https://s3.amazonaws.com/aws-cli/awscli-bundle.zip",
