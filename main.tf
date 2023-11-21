@@ -96,7 +96,7 @@ resource "aws_security_group" "sg" {
 }
 
 resource "aws_instance" "my_instance" {
-  ami           = "ami-0a7cf821b91bcccbc"  # Use the desired AMI ID
+  ami           = "ami-0f7b55661ecbbe44c"  # Use the desired AMI ID
   instance_type = "t2.small"  # Change to a supported instance type for Microsoft SQL Server
   key_name      = aws_key_pair.example.key_name
   vpc_security_group_ids = [aws_security_group.sg.id]
