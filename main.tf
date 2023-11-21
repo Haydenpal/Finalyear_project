@@ -1,9 +1,7 @@
 # main.tf
 
 provider "aws" {
-  region = "ap-south-1"
-  access_key ="AKIA3W57GKZIZ5XB2EO5"  # Use Terraform variables for flexibility
-  secret_key ="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"  # Use Terraform variables for flexibility
+  region = "ap-south-1"  # Use Terraform variables for flexibility
 # Change this to the desired AWS region
 }
 
@@ -126,8 +124,8 @@ resource "aws_instance" "my_instance" {
       "sudo unzip terraform_0.15.5_linux_amd64.zip",
       "sudo mv terraform /usr/local/bin/",
       "sudo rm terraform_0.15.5_linux_amd64.zip",
-      "sudo aws configure set aws_access_key_id 'AKIA3W57GKZIZ5XB2EO5'",
-      "sudo aws configure set aws_secret_access_key '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'",
+      "sudo aws configure set aws_access_key_id 'AKIA5MAGU6INJRC3NYH4'",
+      "sudo aws configure set aws_secret_access_key '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'",
       "sudo aws configure set region 'ap-south-1'",
       "sudo chmod +x deploy.sh",  # Set execute permissions for deploy.sh
       "sudo ./deploy.sh",  # Execute your deploy.sh script
