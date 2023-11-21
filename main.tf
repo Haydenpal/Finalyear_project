@@ -1,11 +1,3 @@
-# main.tf
-variable "AWS_ACCOUNT_ID" {
-  description = "Your AWS account ID"
-}
-
-variable "ECR_REPO_NAME" {
-  description = "Your ECR repository name"
-}
 
 provider "aws" {
   region = "ap-northeast-1"  # Use Terraform variables for flexibility
