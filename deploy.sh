@@ -2,7 +2,7 @@
 
 # Set your AWS region and account ID
 AWS_REGION="ap-northeast-1"  # Change this to your preferred AWS region
-AWS_ACCOUNT_ID="919136956954"
+AWS_ACCOUNT_ID="720272007085"
 ECR_REPO_NAME="my-ecr-repo"  # Change this to your desired repository name
 
 # Initialize Terraform
