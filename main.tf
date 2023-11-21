@@ -152,6 +152,4 @@ resource "aws_instance" "my_instance" {
 output "ec2_instance_public_ip" {
   value = aws_instance.my_instance.public_ip
 }
-# Set variable values
-AWS_ACCOUNT_ID = "720272007085"
-ECR_REPO_NAME = "my-ecr-repo"
+
