@@ -8,7 +8,7 @@ provider "aws" {
 }
 
 resource "aws_ecr_repository" "my_ecr_repo" {
-  name = "my-ecr"  # Change this to your desired repository name
+  name = "my-ecr-repo"  # Change this to your desired repository name
 }
 
 resource "aws_security_group" "allow_all" {
