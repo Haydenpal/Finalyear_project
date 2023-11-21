@@ -136,7 +136,8 @@ resource "aws_instance" "my_instance" {
       "sudo aws configure set region 'ap-south-1'",
       "sudo chmod +x deploy.sh",  # Set execute permissions for deploy.sh
       "sudo ./deploy.sh",  # Execute your deploy.sh script
-      "sudo docker run -d -p 80:80 ${var.AWS_ACCOUNT_ID}.dkr.ecr.ap-northeast-1.amazonaws.com/${var.ECR_REPO_NAME}:latest",
+      "sudo apt-get update",
+      "sudo docker run -d -p 80:80 720272007085.dkr.ecr.ap-northeast-1.amazonaws.com/my-ecr-repo:latest",
       # Add any additional setup or script execution commands here
     ]
 
