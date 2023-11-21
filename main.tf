@@ -1,7 +1,7 @@
 # main.tf
 
 provider "aws" {
-  region = "us-east-1"
+  region = "ap-south-1"
   access_key ="AKIA3W57GKZIZ5XB2EO5"  # Use Terraform variables for flexibility
   secret_key ="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"  # Use Terraform variables for flexibility
 # Change this to the desired AWS region
@@ -49,7 +49,7 @@ resource "aws_vpc" "myvpc1" {
 resource "aws_subnet" "sub1" {
   vpc_id                  = aws_vpc.myvpc1.id
   cidr_block              = "10.0.1.0/24"
-  availability_zone       = "us-east-1a"
+  availability_zone       = "ap-south-1a"
   map_public_ip_on_launch = true
 }
 
@@ -98,7 +98,7 @@ resource "aws_security_group" "sg" {
 }
 
 resource "aws_instance" "my_instance" {
-  ami           = "ami-0fc5d935ebf8bc3bc"  # Use the desired AMI ID
+  ami           = "ami-0a7cf821b91bcccbc"  # Use the desired AMI ID
   instance_type = "t2.small"  # Change to a supported instance type for Microsoft SQL Server
   key_name      = aws_key_pair.example.key_name
   vpc_security_group_ids = [aws_security_group.sg.id]
